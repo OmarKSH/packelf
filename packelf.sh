@@ -105,6 +105,7 @@ unpack() {
             unpack_dir="$PACKELF_TMP_DIR"
         else
             tmp_parent=/tmp/packelf_tmp
+            [ ! -d /tmp ] && tmp_parent=./packelf_tmp
             mkdir -p "$tmp_parent"
             unpack_dir=$(mktemp -d -p "$tmp_parent" || echo "$tmp_parent")
         fi
